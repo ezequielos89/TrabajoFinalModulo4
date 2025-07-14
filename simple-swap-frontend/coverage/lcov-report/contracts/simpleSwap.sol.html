@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts\simpleSwap.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> simpleSwap.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">82.76% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>48/58</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">54.55% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>36/66</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>11/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">85.53% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>65/76</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">293×</span>
+<span class="cline-any cline-yes">293×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+&nbsp;
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+&nbsp;
+contract TrabajoPracticoModulo3 is ERC20("SimpleSwap LP Token", "SSLP") {
+    struct Pool {
+        uint256 reserveA;
+        uint256 reserveB;
+        uint256 lastUpdateTimestamp;
+    }
+&nbsp;
+    uint256 private constant FEE_DENOMINATOR = 1000;
+    uint256 private constant PROTOCOL_FEE = 3;
+    uint256 private constant FEE_FACTOR = 997;
+&nbsp;
+    mapping(address =&gt; mapping(address =&gt; Pool)) public pools;
+&nbsp;
+    event LiquidityAdded(address indexed provider, address indexed tokenA, address indexed tokenB, uint256 amountA, uint256 amountB, uint256 liquidity);
+    event LiquidityRemoved(address indexed provider, address indexed tokenA, address indexed tokenB, uint256 amountA, uint256 amountB);
+    event Swap(address indexed sender, address indexed tokenIn, address indexed tokenOut, uint256 amountIn, uint256 amountOut);
+&nbsp;
+    modifier checkDeadline(uint256 deadline) {
+        require(<span class="branch-0 cbranch-no" title="branch not covered" >deadline == 0</span> || deadline &gt;= block.timestamp, "Expired");
+        _;
+    }
+&nbsp;
+    function addLiquidity(
+        address tokenA,
+        address tokenB,
+        uint256 amountADesired,
+        uint256 amountBDesired,
+        uint256 amountAMin,
+        uint256 amountBMin,
+        address to,
+        uint256 deadline
+    ) external <span class="missing-if-branch" title="else path not taken" >E</span>checkDeadline(deadline) returns (uint256 amountA, uint256 amountB, uint256 liquidity) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(tokenA != tokenB &amp;&amp; to != address(0), "Invalid input");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(amountADesired &gt; 0 &amp;&amp; amountBDesired &gt; 0, "Invalid amounts");
+&nbsp;
+        (address token0, address token1) = tokenA &lt; tokenB ? (tokenA, tokenB) : (tokenB, tokenA);
+        Pool memory pool = pools[token0][token1];
+&nbsp;
+        (amountA, amountB) = _calculateLiquidityAmounts(
+            amountADesired,
+            amountBDesired,
+            pool.reserveA,
+            pool.reserveB,
+            amountAMin,
+            amountBMin
+        );
+&nbsp;
+        _safeTransferFrom(tokenA, msg.sender, address(this), amountA);
+        _safeTransferFrom(tokenB, msg.sender, address(this), amountB);
+&nbsp;
+        liquidity = _calculateLiquidity(amountA, amountB, pool.reserveA, pool.reserveB);
+&nbsp;
+        pools[token0][token1] = Pool(
+            pool.reserveA + amountA,
+            pool.reserveB + amountB,
+            block.timestamp
+        );
+&nbsp;
+        _mint(to, liquidity);
+        emit LiquidityAdded(msg.sender, tokenA, tokenB, amountA, amountB, liquidity);
+    }
+&nbsp;
+    function removeLiquidity(
+        address tokenA,
+        address tokenB,
+        uint256 liquidity,
+        uint256 amountAMin,
+        uint256 amountBMin,
+        address to,
+        uint256 deadline
+    ) external <span class="missing-if-branch" title="else path not taken" >E</span>checkDeadline(deadline) returns (uint256 amountA, uint256 amountB) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(tokenA != tokenB &amp;&amp; to != address(0), "Invalid input");
+&nbsp;
+        (address token0, address token1) = tokenA &lt; tokenB ? (tokenA, tokenB) : (tokenB, tokenA);
+        Pool memory pool = pools[token0][token1];
+&nbsp;
+        uint256 _totalSupply = totalSupply();
+        require(pool.reserveA &gt; 0 &amp;&amp; pool.reserveB &gt; 0 &amp;&amp; _totalSupply &gt; 0, "SimpleSwap: INSUFFICIENT LIQUIDITY");
+&nbsp;
+        amountA = (liquidity * pool.reserveA) / _totalSupply;
+        amountB = (liquidity * pool.reserveB) / _totalSupply;
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(amountA &gt;= amountAMin &amp;&amp; amountB &gt;= amountBMin, "Insufficient amounts");
+&nbsp;
+        _burn(msg.sender, liquidity);
+&nbsp;
+        pools[token0][token1] = Pool(
+            pool.reserveA - amountA,
+            pool.reserveB - amountB,
+            block.timestamp
+        );
+&nbsp;
+        _safeTransfer(tokenA, to, amountA);
+        _safeTransfer(tokenB, to, amountB);
+&nbsp;
+        emit LiquidityRemoved(msg.sender, tokenA, tokenB, amountA, amountB);
+    }
+&nbsp;
+    function swapExactTokensForTokens(
+        uint256 amountIn,
+        uint256 amountOutMin,
+        address[] calldata path,
+        address to,
+        uint256 deadline
+    ) external checkDeadline(deadline) returns (uint256[] memory amounts) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(path.length &gt;= 2 &amp;&amp; to != address(0), "Invalid input");
+&nbsp;
+        amounts = new uint256[](path.length);
+        amounts[0] = amountIn;
+&nbsp;
+        for (uint256 i; i &lt; path.length - 1;) {
+            (address tokenIn, address tokenOut) = (path[i], path[i + 1]);
+            (address token0, address token1) = tokenIn &lt; tokenOut ? <span class="missing-if-branch" title="if path not taken" >I</span>(tokenIn, tokenOut) : (tokenOut, tokenIn);
+            Pool memory pool = pools[token0][token1];
+&nbsp;
+            (uint256 reserveIn, uint256 reserveOut) = tokenIn == token0 
+                ? <span class="missing-if-branch" title="if path not taken" >I</span>(pool.reserveA, pool.reserveB) 
+                : (pool.reserveB, pool.reserveA);
+&nbsp;
+            amounts[i + 1] = getAmountOut(amounts[i], reserveIn, reserveOut);
+&nbsp;
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (tokenIn == token0) {
+                pools[token0][token1] = Pool(
+                    pool.reserveA + amounts[i],
+                    pool.reserveB - amounts[i + 1],
+                    block.timestamp
+                );
+            } else {
+                pools[token0][token1] = Pool(
+                    pool.reserveA - amounts[i + 1],
+                    pool.reserveB + amounts[i],
+                    block.timestamp
+                );
+            }
+&nbsp;
+            unchecked { ++i; }
+        }
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(amounts[amounts.length - 1] &gt;= amountOutMin, "Insufficient output");
+&nbsp;
+        _safeTransferFrom(path[0], msg.sender, address(this), amounts[0]);
+        _safeTransfer(path[path.length - 1], to, amounts[amounts.length - 1]);
+&nbsp;
+        emit Swap(msg.sender, path[0], path[path.length - 1], amounts[0], amounts[amounts.length - 1]);
+    }
+&nbsp;
+    function getAmountOut(uint256 amountIn, uint256 reserveIn, uint256 reserveOut) 
+        public pure returns (uint256 amountOut) 
+    {
+        uint256 amountInWithFee = amountIn * FEE_FACTOR;
+        amountOut = (amountInWithFee * reserveOut) / (reserveIn * FEE_DENOMINATOR + amountInWithFee);
+    }
+&nbsp;
+    function getPrice(address tokenA, address tokenB) external view returns (uint256) {
+        (address token0, address token1) = tokenA &lt; tokenB ? (tokenA, tokenB) : (tokenB, tokenA);
+        Pool memory pool = pools[token0][token1];
+&nbsp;
+        require(pool.reserveA &gt; 0 &amp;&amp; pool.reserveB &gt; 0, "SimpleSwap: POOL DOES NOT EXIST");
+&nbsp;
+        uint256 reserveA = tokenA == token0 ? pool.reserveA : <span class="missing-if-branch" title="else path not taken" >E</span>pool.reserveB;
+        uint256 reserveB = tokenA == token0 ? pool.reserveB : <span class="missing-if-branch" title="else path not taken" >E</span>pool.reserveA;
+        return (reserveB * 1e18) / reserveA;
+    }
+&nbsp;
+    function _calculateLiquidityAmounts(
+        uint256 amountADesired,
+        uint256 amountBDesired,
+        uint256 reserveA,
+        uint256 reserveB,
+        uint256 amountAMin,
+        uint256 amountBMin
+    ) internal pure returns (uint256 amountA, uint256 amountB) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (reserveA == 0 &amp;&amp; reserveB == 0) {
+            return (amountADesired, amountBDesired);
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 amountBOptimal = (amountADesired * reserveB) / reserveA;</span>
+<span class="cstat-no" title="statement not covered" >        if (amountBOptimal &lt;= amountBDesired) {</span>
+<span class="cstat-no" title="statement not covered" >            require(amountBOptimal &gt;= amountBMin, "Insufficient B")</span>;
+<span class="cstat-no" title="statement not covered" >            return (amountADesired, amountBOptimal);</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 amountAOptimal = (amountBDesired * reserveA) / reserveB;</span>
+<span class="cstat-no" title="statement not covered" >        require(amountAOptimal &gt;= amountAMin, "Insufficient A")</span>;
+<span class="cstat-no" title="statement not covered" >        return (amountAOptimal, amountBDesired);</span>
+    }
+&nbsp;
+    function _calculateLiquidity(
+        uint256 amountA,
+        uint256 amountB,
+        uint256 reserveA,
+        uint256 reserveB
+    ) internal view returns (uint256 liquidity) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (totalSupply() == 0) {
+            liquidity = sqrt(amountA * amountB);
+        } else {
+            liquidity = (amountA * totalSupply()) / reserveA;
+<span class="cstat-no" title="statement not covered" >            uint256 liquidityB = (amountB * totalSupply()) / reserveB;</span>
+<span class="cstat-no" title="statement not covered" >            if (liquidityB &lt; liquidity) liquidity = liquidityB;</span>
+        }
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(liquidity &gt; 0, "Insufficient liquidity");
+    }
+&nbsp;
+    function sqrt(uint256 x) internal pure returns (uint256 y) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (x == 0) <span class="cstat-no" title="statement not covered" >return 0;</span>
+        uint256 z = (x + 1) / 2;
+        y = x;
+        while (z &lt; y) {
+            y = z;
+            z = (x / z + z) / 2;
+        }
+    }
+&nbsp;
+    function _safeTransfer(address token, address to, uint256 value) internal {
+        (bool success, bytes memory data) = token.call(abi.encodeWithSelector(IERC20.transfer.selector, to, value));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(success &amp;&amp; (<span class="branch-0 cbranch-no" title="branch not covered" >data.length == 0</span> || abi.decode(data, (bool))), "Transfer failed");
+    }
+&nbsp;
+    function _safeTransferFrom(address token, address from, address to, uint256 value) internal {
+        (bool success, bytes memory data) = token.call(abi.encodeWithSelector(IERC20.transferFrom.selector, from, to, value));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(success &amp;&amp; (<span class="branch-0 cbranch-no" title="branch not covered" >data.length == 0</span> || abi.decode(data, (bool))), "TransferFrom failed");
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jul 13 2025 21:28:19 GMT-0300 (hora estándar de Argentina)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

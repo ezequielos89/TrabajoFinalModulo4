@@ -1,0 +1,30 @@
+# Node.js
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Env files
+.env
+
+# Hardhat
+/cache
+/artifacts
+
+# TypeChain
+/typechain
+/typechain-types
+
+# solidity-coverage
+/coverage
+/coverage.json
+
+# Hardhat Ignition deployments
+ignition/deployments/chain-31337
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Vite/React build
+dist
