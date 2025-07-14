@@ -34,8 +34,9 @@ El objetivo es permitir a los usuarios conectar su billetera, obtener precios de
 ```bash
 git clone https://github.com/ezequielos89/TrabajoFinalModulo4.git
 cd TrabajoFinalModulo4/simpleSwap
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Instalar dependencias del backend (contrato)
+
+
+### Instalar dependencias del backend (contrato)
 npm install
 
 Correr Hardhat localmente
@@ -47,8 +48,8 @@ Deploy del contrato
 En otra terminal (con node corriendo):
 npx hardhat run scripts/deploy.js --network localhost
 Guardá la dirección del contrato que se despliega para usar en el frontend
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Frontend
+
+###Frontend
 Ir al directorio del frontend
 cd ../simple-swap-frontend
 
@@ -58,7 +59,7 @@ npm install
 Iniciar la app
 npm run dev
 Abre tu navegador en: http://localhost:5173
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Testing
+
+###Testing
 Para correr los tests del contrato y generar el informe de cobertura:
 npx hardhat coverage
