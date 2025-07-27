@@ -63,3 +63,6 @@ Abre tu navegador en: http://localhost:5173
 ###Testing
 Para correr los tests del contrato y generar el informe de cobertura:
 npx hardhat coverage
+
+Captura de coverage
+![Cobertura de tests](images/cobertura.png)
